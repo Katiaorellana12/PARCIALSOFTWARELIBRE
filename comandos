@@ -1,0 +1,62 @@
+Apt update “actualizamos los repositorios”
+Apt install openssh-server “Instalamos el paquete de openssh-server”
+Systemctl status shh “verificamos el estado del servicio”
+Systemctl stop ssh “apagamos el servicio”
+Systemctl star ssh “encendemos el servicio”
+Ip add “verificamos la ip del servicio”
+Ssh 192.168.1.25 “sincronizamos la maquina cliente”
+
+“creacion de grupos”
+Groupadd RH
+Groupadd ADMON
+Groupadd operaciones
+
+“creacion de usuarios”
+Adduser usuario1
+Adduser usuario2
+Adduser usuario3
+Adduser usuario4
+Adduser usuario5
+Adduser usuario6
+Adduser usuario7
+Adduser usuario8
+Adduser usuario9
+
+
+“asignamos usuario1,2,3 al grupo Rh”
+Adduser usuario1 RH
+Adduser usuario2 RH
+Adduser usuario3 RH
+
+“asignamos usuario4,5,6 al grupo ADMON”
+Adduser usuario4 ADMON
+Adduser usuario5 ADMON
+Adduser usuario6 ADMON
+
+“asignamos usuario7,8,9 al grupo operaciones”
+Adduser usuario7 operaciones
+Adduser usuario8 operaciones
+Adduser usuario9 operaciones
+
+Entramos al usuario1 que tendra el permiso y la creacion de archivos
+Su 
+1234
+Login usuario1
+Touch empleados.txt app.sh planilla.pdf calendarizacion.docx logo.png capacitaciones.xlsx permisos.docx roles-semana1.pdf filosofia.mp4
+
+Transferencia de archivo salario
+
+Dir “para ver los archivos que tenemos en el escritorio”
+Scp salarios.pdf katia@192.168.1.25: /home/katia/escritorio “con este comando enviamos el archivo a nuestra maquina”
+
+Ls “para ver si se agrego el archivo en el escritorio”
+
+
+Entramos al usuario propietario
+Su – katia
+Asignamos permisoa de Lectura y escritura para el usuario
+3 de RH y permisos de lectura para el grupo y ninguno para el resto.
+Chmod  740 salarios.pdf
+
+
+
